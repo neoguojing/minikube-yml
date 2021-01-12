@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-headless-service
+  labels:
+    app: redis-cluster-app
+spec:
+  selector:
+    app: redis-cluster-app
+  ports:
+  - name: redis-port
+    port: 6379
+  clusterIP: None
