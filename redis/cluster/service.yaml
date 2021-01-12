@@ -11,3 +11,20 @@ spec:
   - name: redis-port
     port: 6379
   clusterIP: None
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  labels:
+    app: redis-cluster-app
+spec:
+  ports:
+  - name: redis-port
+    protocol: "TCP"
+    port: 6379
+    targetPort: 6379
+  selector:
+    app: redis-cluster-app
+
