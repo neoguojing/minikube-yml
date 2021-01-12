@@ -15,3 +15,7 @@
 - kubectl describe pod xxx 查看pod日志详细云信情况
 - kubectl logs -f xxx  日志
 
+## svc
+
+{服务名}.{namespace}.svc.cluster.local
+primary.default.svc.cluster.local
