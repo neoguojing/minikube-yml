@@ -4,6 +4,7 @@
 
 - minikube start --mount-string="/data/minikube:/data" --mount 启动时挂载
 - minikube mount /data/minikube:/data 绑定宿主机目录到minikube VM
+- minikube service --url $SERVICE 获取对应nodePort服务的 ip和端口
 
 ## PV
 
