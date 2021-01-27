@@ -20,3 +20,24 @@
 
 {服务名}.{namespace}.svc.cluster.local
 primary.default.svc.cluster.local
+
+## 私有仓库
+
+```
+docker login
+
+kubectl create secret generic regcred \
+    --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
+    --type=kubernetes.io/dockerconfigjson
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: private-reg
+spec:
+  containers:
+  - name: private-reg-container
+    image: <your-private-image>
+  imagePullSecrets:
+  - name: regcred
+```
