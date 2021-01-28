@@ -1,10 +1,17 @@
 # minikube-yml
 
+## dashboard代理 适合其他任何服务
+
+```
+kubectl proxy --port=代理端口 --address='宿主机ip' --accept-hosts='^.*'
+```
+
 ## minikube
 
 - minikube start --mount-string="/data/minikube:/data" --mount 启动时挂载
 - minikube mount /data/minikube:/data 绑定宿主机目录到minikube VM
 - minikube service --url $SERVICE 获取对应nodePort服务的 ip和端口
+- minikube --memory 10240 --cpus 6 start 指定内存和cpu
 
 ## PV
 
