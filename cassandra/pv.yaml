@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: cassandra-storage-0
+spec:
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/cassandra/0"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: cassandra-storage-1
+spec:
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/cassandra/1"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: cassandra-storage-2
+spec:
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/cassandra/2"
